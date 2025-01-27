@@ -8,20 +8,20 @@ export default function Home() {
 
       <div className="card">
         <p className="name">Ariunjargal</p>
-        <p className="job">Coding</p>
+        <p className="job">Developer</p>
         <div className="address">
+          <img src="phone.png"></img>
           <p>000-123-456-789</p>
           <p>email@yourdomain.com</p>
           <p>Your address goes here <br /> 123  strett, Usa</p>
 
-<div className="imgdev">
+          <div className="imgdev">
 
-  <img src="Vector1png.png"></img>
-  <img src="Vector2.png"></img>
-  <img src="Vector3.png"></img>
-  <img src="back.png"></img>
-</div>
-          <img src="Qr-code.png"></img>
+            <img className="logoback" src="Shape.png"></img>
+
+            <img className="name-logo" src="name-logo.png"></img>
+            <img className="qr" src="Qr-code.png"></img>
+          </div>
         </div>
       </div>
 

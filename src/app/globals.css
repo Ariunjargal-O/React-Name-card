@@ -45,8 +45,8 @@ a {
 
 /* MY CODING */
 
-.card{
-  width:336px ;
+.card {
+  width: 336px;
   height: 192px;
   border-radius: 10px;
   background-color: white;
@@ -54,20 +54,19 @@ a {
   margin-left: 50px;
   position: relative;
 
-  
 }
 
-.name{
-   font-size: 14px;
-   line-height: 16.8px;
-   font-weight: 700;
-  color:#0071BC;
+.name {
+  font-size: 14px;
+  line-height: 16.8px;
+  font-weight: 700;
+  color: #0071BC;
   position: absolute;
   top: 25px;
   left: 27px;
 }
 
-.job{
+.job {
   font-size: 8px;
   line-height: 9.75px;
   color: black;
@@ -76,23 +75,31 @@ a {
   left: 27px;
 }
 
-.address{
-font-size: 8px;
-font-weight: 300;
-line-height: 9.68px;
-color: black;
+.address {
+  font-size: 8px;
+  font-weight: 300;
+  line-height: 9.68px;
+  color: black;
   position: absolute;
-top: 131.44px;
-left: 40.87px;
-margin-bottom: 8px;
+  top: 131.44px;
+  left: 40.87px;
+  margin-bottom: 8px;
 }
 
-.imgdiv{
-  display: flex;
-  position: relative;
-  left: 187px;
-
-}
-.imgdiv img{
+.card .logoback {
   position: absolute;
+  top: -131px;
+  left: 135px;
+  border-radius: 0 10px 10px 0;
+}
+
+.card .name-logo {
+  position: absolute;
+  top: -110px;
+  left: 185px;
+}
+.qr{
+  position: absolute;
+  top: -5px;
+  left: 210px;
 }

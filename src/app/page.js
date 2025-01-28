@@ -1,697 +1,208 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+const users = [
+  {
+    name: "Ariunjargal",
+    role: "Developer",
+    phoneNumber: "12345678",
+    email: "jargal@gmail.com",
+    address: "SHDistrict 17 khoroo",
+    companyName: "PineAri"
+  },
+  {
+    name: "Bayar",
+    role: "Designer",
+    phoneNumber: "23456789",
+    email: "bayar@gmail.com",
+    address: "SHDistrict 18 khoroo",
+    companyName: "BAYARDES"
+  },
+  {
+    name: "Chuluun",
+    role: "Project Manager",
+    phoneNumber: "34567890",
+    email: "chuluun@gmail.com",
+    address: "SHDistrict 19 khoroo",
+    companyName: "KHAS LLC"
+  },
+  {
+    name: "Davaa",
+    role: "QA Engineer",
+    phoneNumber: "45678901",
+    email: "davaa@gmail.com",
+    address: "SHDistrict 20 khoroo",
+    companyName: "KHAS LC"
+  },
+  {
+    name: "Erdene",
+    role: "Backend Developer",
+    phoneNumber: "56789012",
+    email: "erdene@gmail.com",
+    address: "SHDistrict 21 khoroo",
+    companyName: "PineBa"
+  },
+  {
+    name: "Gantulga",
+    role: "Frontend Developer",
+    phoneNumber: "67890123",
+    email: "gantulga@gmail.com",
+    address: "SHDistrict 22 khoroo",
+    companyName: "Pld LLC"
+  },
+  {
+    name: "Hassan",
+    role: "UX/UI Designer",
+    phoneNumber: "78901234",
+    email: "hassan@gmail.com",
+    address: "SHDistrict 23 khoroo",
+    companyName: "PiNEllc"
+  },
+  {
+    name: "Ilyas",
+    role: "Data Scientist",
+    phoneNumber: "89012345",
+    email: "ilyas@gmail.com",
+    address: "SHDistrict 24 khoroo",
+    companyName: "HASLLS"
+  },
+  {
+    name: "Jargal",
+    role: "Security Engineer",
+    phoneNumber: "90123456",
+    email: "jargal.security@gmail.com",
+    address: "SHDistrict 25 khoroo",
+    companyName: "NARAN"
+  },
+  {
+    name: "Khuslen",
+    role: "DevOps Engineer",
+    phoneNumber: "01234567",
+    email: "khuslen@gmail.com",
+    address: "SHDistrict 26 khoroo",
+    companyName: "NOMIN HL"
+  },
+  {
+    name: "Lkhagva",
+    role: "Product Manager",
+    phoneNumber: "12345679",
+    email: "lkhagva@gmail.com",
+    address: "SHDistrict 27 khoroo",
+    companyName: "ATG DEV"
+  },
+  {
+    name: "Munkhbayar",
+    role: "Content Strategist",
+    phoneNumber: "23456780",
+    email: "munkhbayar@gmail.com",
+    address: "SHDistrict 28 khoroo",
+    companyName: "MGL radio"
+  },
+  {
+    name: "Nomin",
+    role: "Marketing Manager",
+    phoneNumber: "34567891",
+    email: "nomin@gmail.com",
+    address: "SHDistrict 29 khoroo",
+    companyName: "Tesla"
+  },
+  {
+    name: "Oyun",
+    role: "Sales Representative",
+    phoneNumber: "45678902",
+    email: "oyun@gmail.com",
+    address: "SHDistrict 30 khoroo",
+    companyName: "Darkhan"
+  },
+  {
+    name: "Khuygaa",
+    role: "System Administrator",
+    phoneNumber: "56789013",
+    email: "pjotr@gmail.com",
+    address: "SHDistrict 31 khoroo",
+    companyName: "ENKHDUL"
+  },
+  {
+    name: "Kara",
+    role: "HR Specialist",
+    phoneNumber: "67890124",
+    email: "qara@gmail.com",
+    address: "SHDistrict 32 khoroo",
+    companyName: "MLC LLC"
+  },
+  {
+    name: "Renchin",
+    role: "Software Architect",
+    phoneNumber: "78901235",
+    email: "renchin@gmail.com",
+    address: "SHDistrict 33 khoroo",
+    companyName: "MyFul"
+  },
+  {
+    name: "Saruul",
+    role: "Front-end Developer",
+    phoneNumber: "89012346",
+    email: "saruul@gmail.com",
+    address: "SHDistrict 34 khoroo",
+    companyName: "Gzarchin"
+  }
+]
+
+function Card(props) {
+  console.log(props)
+  return (
+    <div className="card-flex">
+      <div className="card">
+        <p className="name-text">{props.users.name}</p>
+        <p className="job">{props.users.role}</p>
+        <div className="address">
+          <div id="flex">
+            <img src="phone.png"></img>
+            <p>{props.users.phoneNumber}</p></div>
+          <div id="flex">
+            <img src="mail.png"></img>
+            <p>{props.users.email}</p>
+          </div>
+          <div id="flex">
+            <img src="map.png"></img>
+            <p>{props.users.address}</p>
+          </div>
+
+          <div>
+            <img className="logoback" src="Shape.png"></img>
+            <div className="imgdev">
+              <img className="name-logo" src="logo.png"></img>
+              <p className="co-name">
+                {props.users.companyName}
+              </p>
+            </div>
+            <img className="qr" src="Qr-code.png"></img>
+          </div>
+        </div>
+      </div>
+      <div className="card-back">
+        <img className="backlogo" src="Logo.png"></img>
+        <p className="back-name">
+          {props.users.companyName}</p>
+        <img className="backline
+      " src="backline.png"></img>
+      </div>
+    </div>
+  )
+}
 
 export default function Home() {
+  const cards = [];
+  for (let i = 0; i < users.length; i++) {
+    cards.push(<Card users={users[i]}></Card>)
+
+  }
+
 
   return (
-    <div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Ariunjargal</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>000-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>email@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> 123  stret, Usa</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineAri
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineAri</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Jamiyasuren</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>000-234-435-345</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>jamiya@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> 123  strett, Ulaanbaatar</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineJam
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineJam</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Oyunbat</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>034-123-456-345</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>oyunbat@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> 123  strett, Dornod</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineOyu
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineOyu</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Chinguun</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>081-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>chinguun@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> Khunsnii 4, Usa</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineChi
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineChi</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Baljan</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>099-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>baljan@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> Bayan-Ulgii, Usa</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineBal
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineBal</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Nomin-Erdene</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>034-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>nomiko@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />Ulaanbaatar, 123</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineNmn
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineNmn</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Narangerel</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>067-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>naraa@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> 123 district, Uk</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineNara
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineNara</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Aygul</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>099-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>aygul@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> Sukhbaatar district 1 khoroo </p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PiAygl
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PiAygl</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Turbat</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>230-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>turuu@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br /> Sukhbaatar district 1 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineTur
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PinTur</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Itgel</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>570-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>itgel@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 3 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PinItgl
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PinItgl</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Telmuun</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>082-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>termuun@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 5 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineTLM
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineTLM</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Ursa</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>092-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>ursa@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 13 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PinUrsa
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PinUrsa</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Jargalsaikhan</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>380-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>jak@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 19 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineJak
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineJak</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Ider</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>120-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>idree@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 16 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PinIdre
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PinIdre</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Chingun</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>025-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>chinguu@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 21 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineCHN
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineCHN</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Baasandash</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>124-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>baaska@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 32 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  Dashka
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  Dashka</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">Tugsbileg</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>019-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>tugsuu@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 41 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PinTugs
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PinTugs</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-      <div className="card-flex">
-        <div className="card">
-          <p className="name">HuviTuguldur</p>
-          <p className="job">Developer</p>
-          <div className="address">
-            <div id="flex">
-              <img src="phone.png"></img>
-              <p>670-123-456-789</p></div>
-            <div id="flex">
-              <img src="mail.png"></img>
-              <p>huvi@yourdomain.com</p>
-            </div>
-            <div id="flex">
-              <img src="map.png"></img>
-              <p>Your address goes here <br />  Sukhbaatar district 51 khoroo</p>
-            </div>
-
-            <div className="imgdev">
-              <img className="logoback" src="Shape.png"></img>
-              <div>
-                <img className="name-logo" src="logo.png"></img>
-                <p className="co-name">
-                  PineTGL
-                  </p>
-              </div>
-              <img className="qr" src="Qr-code.png"></img>
-            </div>
-          </div>
-        </div>
-        <div className="card-back">
-          <img className="backname" src="Logo.png"></img>
-          <p className="back-name">
-                  PineTGL</p>
-          <img className="backline
-      " src="backline.png"></img>
-        </div>
-      </div>
-
-
+    <div className="cointainer">
+      {cards}
     </div>
+
+
   );
 }

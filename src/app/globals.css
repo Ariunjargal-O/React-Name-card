@@ -96,10 +96,65 @@ a {
 .card .name-logo {
   position: absolute;
   top: -110px;
-  left: 185px;
+  left: 215px;
 }
 .qr{
   position: absolute;
   top: -5px;
   left: 210px;
 }
+
+.card-back {
+  width: 336px;
+  height: 192px;
+  border-radius: 10px;
+  background-color: black;
+  margin-top: 50px;
+  margin-left: 50px;
+  position: relative;
+}
+
+#flex{
+  display: flex;
+  gap: 5px;
+  padding-bottom: 3px;
+}
+
+#flex img{
+  width: 8px;
+  height: 8px;
+}
+
+
+.backname{
+  position: absolute;
+  top: 35px;
+  left: 150px;
+}
+.backline{
+  position: absolute;
+  top: 159px;
+  left: 0px;
+border-radius: 10px;
+}
+
+.card-flex{
+  display: flex;
+}
+
+.co-name{
+color: white;
+font-size: 20px;
+position: absolute;
+top: -70px;
+left: 190px;
+}
+
+.back-name{
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 70px;
+  left: 130px;
+  }
+

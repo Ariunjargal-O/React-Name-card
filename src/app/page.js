@@ -167,9 +167,9 @@ function Card(props) {
             <p>{props.users.address}</p>
           </div>
 
-          <div>
+          <div className="imgdev">
             <img className="logoback" src="Shape.png"></img>
-            <div className="imgdev">
+            <div>
               <img className="name-logo" src="logo.png"></img>
               <p className="co-name">
                 {props.users.companyName}
